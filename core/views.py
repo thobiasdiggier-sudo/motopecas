@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from .models import Produto
-from .forms import ProdutoForm
+from .models import Produto, CadastrarMoto
+from .forms import ProdutoForm, CadastrarMotoForm
 
 def inicial(request):
     return render(request, 'index.html')
