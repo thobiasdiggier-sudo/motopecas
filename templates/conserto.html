@@ -2,6 +2,17 @@
 
 {% block content %}
 <main>
-    <h1>Mesma coisa, besteira</h1>
+    <div>
+        <h1>Motos em Conserto:</h1>
+        {% for consertos in todos_conserto %}
+        <p>Modelo da Moto: {{consertos.modelo}}</p>
+        <p>Quilometragem da Moto: {{consertos.quilometragem}}</p>
+        <p>Ano da Moto: {{consertos.ano}}</p>
+        <p>Problema da Moto: {{consertos.problema}}</p>
+        {% empty %}
+        <p>Sem Consertos </p>
+        {% endfor %}
+    </div>
+
 </main>
 {% endblock %}

@@ -12,6 +12,13 @@ def produtos(request):
     }
     return render(request, 'produtos.html', context)
 
+def conserto(request):
+    Conserto = CadastrarMoto.objects.all()
+    context = {
+        'todos_conserto': Conserto
+    }
+    return render(request, 'conserto.html', context)
+
 def cadastrar_produtos(request):
     form = ProdutoForm(request.POST or None)
 
@@ -30,7 +37,7 @@ def cadastrar_motos(request):
 
     if form.is_valid():
         form.save()
-        return redirect('consertos')
+        return redirect('conserto')
 
     context = {
         'form_cadastrarMotos': form
