@@ -23,3 +23,16 @@ def cadastrar_produtos(request):
         'form_produto': form
     }
     return render(request, 'cadastrar_produtos.html', context)
+
+
+def cadastrar_motos(request):
+    form = CadastrarMotoForm(request.POST or None)
+
+    if form.is_valid():
+        form.save()
+        return redirect('consertos')
+
+    context = {
+        'form_cadastrarMotos': form
+    }
+    return render(request, 'cadastrar_motos.html', context)
