@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main>
+    <div>
+        <h1>Podutos a Venda:</h1>
+        {% for produto in todos_produtos %}
+        <p>Nome: {{produto.nome}}</p>
+        <p>Preço: {{produto.preco}}</p>
+        <p>Tipo: {{produto.tipo}}</p>
+        {% empty %}
+        <p>Estoque Vazio</p>
+        {% endfor %}
+    </div>
+
+</main>
+{% endblock %}

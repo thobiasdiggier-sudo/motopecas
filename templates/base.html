@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irandir Motopeças</title>
+</head>
+<body>
+    <header id="cabecalho">
+        <div class="logo">
+            <img src="{% static 'imagens/logo.png' %}" alt="">
+        </div>
+
+        <div class="botao-topo">
+            <button class="botao">Buscar</button>
+            <button class="botao">Conta do Cliente</button>
+            <button class="botao">Contato</button>
+        </div>
+    </header>
+    {% block content %}
+    {% endblock %}
+    <footer id="rodape">
+        <h5>Informações sobre a Oficina</h5>
+    </footer>
+</body>
+</html>

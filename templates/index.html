@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main>
+    <div id="itens-cliente">
+        <a href="{% url 'produtos' %}">
+            <button> <h1>Buscar Produtos</h1></button>
+        </a>
+        <h2>Ofertas Disponíveis</h2>
+    </div>
+
+    <div id="conserto-cliente">
+        <h2>Consertos em Processo</h2>
+    </div>
+</main>
+{% endblock %}
