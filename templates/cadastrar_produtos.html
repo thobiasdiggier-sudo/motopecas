@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main>
+    <form method="post">
+        {% csrf_token %}
+        {{ form_produto }}
+        <p><input type="submit" value="Cadastrar"></p>
+    </form>
+</main>
+{% endblock %}

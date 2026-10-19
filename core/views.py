@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Produto
+from .forms import ProdutoForm
 
 def inicial(request):
     return render(request, 'index.html')
@@ -11,5 +12,14 @@ def produtos(request):
     }
     return render(request, 'produtos.html', context)
 
-def conserto(request):
-    return render(request, 'conserto.html')
+def cadastrar_produtos(request):
+    form = ProdutoForm(request.POST or None)
+
+    if form.is_valid():
+        form.save()
+        return redirect('produtos')
+
+    context = {
+        'form_produto': form
+    }
+    return render(request, 'cadastrar_produtos.html', context)
